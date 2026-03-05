@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aspectj>
+
+    <!-- Configura o weaver -->
+    <weaver options="-verbose -showWeaveInfo">
+        <!-- Aplica weaving em todas as classes do classpath -->
+        <include within="com.pro..*"/>
+    </weaver>
+
+    <!-- Define os aspects a serem aplicados -->
+    <aspects>
+        <aspect name="com.pro.aspect.LogAspect"/>
+    </aspects>
+
+    <!-- Optional: define quem é “aspect-aware” -->
+    <weaver options="-Xset:weaveJavaxPackages=true"/>
+</aspectj>
