@@ -42,14 +42,18 @@ Voce precisa chamar seu Weaver para conseguir ver o Aspect, se nao ele passa inv
 ### Explicação
 
 **O log do AspectJ**
+
 weaveinfo at com/pro/App.java:7::0 Join point 'method-call(void com.pro.Init.add())' in Type 'com.pro.App' (App.java:7) advised by before advice from 'com.pro.aspect.LogAspect' (LogAspect.java::0)
 see also: com/pro/aspect/LogAspect.java::0
 
 Isso significa que o AspectJ aplicou o advice na chamada do método add() dentro de App. O join point é o ponto onde você chama init.add(). Também mostra que aplicou na execução do método dentro de Init.java.
 
 **Saída do programa**
+
 Aspect acionado: Teste AspectJ
+
 Aspect acionado: Teste AspectJ
+
 ----- Java Annotation Custom | Main -----
 
 Dois disparos do aspect:
@@ -65,7 +69,7 @@ Depois, aparece o System.out.println do método add(). Isso é completamente nor
 **Por que aparecem dois disparos?**
 
 Você tem @Before("@annotation(logAnnotation)"):
+
 AspectJ, em LTW, pode interceptar tanto:
-A execução do método (method-execution)
-A chamada do método (method-call)
-Por isso vemos o aspecto disparando duas vezes no console.
+
+A execução do método (method-execution). A chamada do método (method-call). Por isso vemos o aspecto disparando duas vezes no console.
